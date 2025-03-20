@@ -11,3 +11,4 @@ echo $twig->render('compras.html', [
     'titulo' => 'Compras',
     'compras' => $comp
 ]);
+
