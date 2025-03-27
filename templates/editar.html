@@ -3,11 +3,11 @@
 {% block conteudo %}
 Página de compras
 
-<h3>Editar item</h3>
-<form action="compras_salvar.php" method="post">
-    <input type="hidden" name="id" value="{{item.id}}">
-    <input type="text" name="item" placeholder="Escreva o nome do Item">
-
+<h3>Editar {% if compromisso %}Compromisso{% else %} item {% endif %}</h3>
+<form action={% if compromisso %}"compromissos_salvar.php"{% else %}"compras_salvar.php"{% endif %} method="post">
+    <input type="hidden" name="id" value={% if compromisso %}"{{compromisso.id}}"{% else %}"{{item.id}}"{% endif %}>
+        {% if compromisso %} <input type="text" name="titulo" placeholder="Escreva o nome do Compromisso"> {% else %}        <input type="text" name="item" placeholder="Escreva o nome do Item">{% endif %}
+    {% if compromisso %} <input type="date" name="tempo"> {% endif %}
     <input type="submit" value="Editar">
 </form>
 
