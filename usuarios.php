@@ -1,0 +1,12 @@
+<?php
+
+require_once('twig_carregar.php');
+require('inc/banco.php');
+
+$dados = $pdo->query('SELECT * FROM usuarios');
+$user = $dados->fetchAll(PDO::FETCH_ASSOC);
+
+echo $twig->render('usuarios.html', [
+    'titulo' => 'Usuários',
+    'usuarios' => $user
+]);
