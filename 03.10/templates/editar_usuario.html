@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+
+{% block conteudo %}
+Página de compras
+
+<h3>Editar Usuário</h3>
+<form action="usuarios_salvar.php" method="post">
+    <input type="hidden" name="id" value="{{user.id}}">
+    <input type="hidden" name="login" value="{{user.login}}">
+    <input type="password" name="senhaa" placeholder="Senha atual">
+    <input type="password" name="senha" placeholder="Escreva a nova Senha">
+    <input type="password" name="senha2" placeholder="Repita a nova Senha"> 
+    <input type="submit" value="Editar">
+</form>
+ {{erro}}
+{% endblock %}

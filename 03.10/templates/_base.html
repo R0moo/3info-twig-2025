@@ -15,6 +15,10 @@
     <a href="compras.php">Compras</a> |
     <a href="horario.php">Horário</a> |
     <a href="compromissos.php">Compromissos</a> |
+    <a href="usuarios.php">Usuários</a> |
+    {% if logado %}
+    <a href="logout.php">Logout</a> 
+    {% endif %}
     <hr>
 
     {% block conteudo %}
